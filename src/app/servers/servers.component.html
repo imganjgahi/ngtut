@@ -1,11 +1,11 @@
 <p>servers works!</p>
-<input type="text" (input)= "onChangeServerInput($event)">
+<input type="text" [(ngModel)]="serverName" (input)="onChangeServerInput()">
 <button 
 [disabled]="!allowNewServer" 
 (click)="onCreateServer()" 
 (mouseout)="onChangeBtnText('Add new Server')" 
 (mouseover)="onChangeBtnText('Click to add')"> {{creationBtnText}} </button>
-<p> {{serverName == "" ? 'no server was created' : serverName}} </p>
+<p *ngIf="serverCreationStatus"> Server was created. it's name is {{serverName}} </p>
 <hr>
 <app-server></app-server>
 <app-server></app-server>
