@@ -8,9 +8,13 @@ import { Component } from '@angular/core';
 export class ServerComponent {
 
      serverId: number = Math.floor(Math.random() * 100);
-     serverStatus: boolean;
+     serverStatus: boolean = false;
 
      getServerStatus() {
          return this.serverStatus = this.serverId % 2 === 0
+     }
+
+     getColor() {
+         return this.serverStatus ? 'lightseagreen' : 'red'
      }
 }
