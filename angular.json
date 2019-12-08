@@ -93,6 +93,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_moudles/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": []
