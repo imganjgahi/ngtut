@@ -1,3 +1,10 @@
 <p>servers works!</p>
+<button 
+[disabled]="!allowNewServer" 
+(click)="onCreateServer()" 
+(mouseout)="onChangeBtnText('Add new Server')" 
+(mouseover)="onChangeBtnText('Click to add')"> {{creationBtnText}} </button>
+<p> {{serverCreationStatus}} </p>
+<hr>
 <app-server></app-server>
 <app-server></app-server>
