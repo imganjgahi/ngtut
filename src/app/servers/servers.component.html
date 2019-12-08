@@ -1,10 +1,11 @@
 <p>servers works!</p>
+<input type="text" (input)= "onChangeServerInput($event)">
 <button 
 [disabled]="!allowNewServer" 
 (click)="onCreateServer()" 
 (mouseout)="onChangeBtnText('Add new Server')" 
 (mouseover)="onChangeBtnText('Click to add')"> {{creationBtnText}} </button>
-<p> {{serverCreationStatus}} </p>
+<p> {{serverName == "" ? 'no server was created' : serverName}} </p>
 <hr>
 <app-server></app-server>
 <app-server></app-server>
