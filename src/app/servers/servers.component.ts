@@ -25,5 +25,9 @@ export class ServersComponent implements OnInit {
     
     this.servers.push(newServer)
   }
+
+  onChangeName(){
+    this.servers[0].name = 'Changed!'
+  }
   
 }

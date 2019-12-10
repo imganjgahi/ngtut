@@ -1,0 +1,10 @@
+<p>game works!</p>
+<button (click)="onStartGame()">Start the Game</button>
+<button (click)="onPauseGame()">Pause the Game</button>
+<button (click)="onResetGame()">Reset the Game</button>
+<div class="game-control">
+        <div *ngFor="let num of numbers">
+            <app-odd-cell *ngIf="num % 2 !== 0" [odd]="num"></app-odd-cell>
+            <app-even-cell *ngIf="num % 2 === 0"  [even]="num"></app-even-cell>
+        </div>
+</div>

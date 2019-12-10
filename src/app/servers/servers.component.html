@@ -4,6 +4,6 @@
 (onResetServers)="servers = []"
 
 ></app-cockpit>
-
+<button (click)="onChangeName()">Chenged</button>
 <hr>
-<app-server *ngFor="let server of servers" [currentServer] ="server"> </app-server>
+<app-server *ngFor="let server of servers" [currentServer] ="server" [name]="server.name"> </app-server>
