@@ -11,6 +11,7 @@ export class ServerComponent {
      serverStatus: boolean = false;
 
      getServerStatus() {
+         console.log("SEVRED: ", this.serverStatus)
          return this.serverStatus = this.serverId % 2 === 0
      }
 

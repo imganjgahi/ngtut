@@ -9,7 +9,8 @@ export class ServersComponent implements OnInit {
   allowNewServer: boolean = false;
   serverCreationStatus:boolean = false;
   creationBtnText = "add new server";
-  serverName = ""
+  serverName = "";
+  servers: string[] = ["myapp"]
   constructor() { 
     setTimeout(() => {
       this.allowNewServer = true
@@ -27,5 +28,6 @@ export class ServersComponent implements OnInit {
   }
   onCreateServer () {
     this.serverCreationStatus = true
+    this.servers.push(this.serverName)
   }
 }
