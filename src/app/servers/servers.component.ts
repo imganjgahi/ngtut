@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { IServer, IServerData } from '../../models/serversModel';
 
 
-interface IServer {id: number; name: string; content: string}
+
 @Component({
   selector: 'app-servers',
   templateUrl: './servers.component.html',
@@ -17,9 +18,12 @@ export class ServersComponent implements OnInit {
   ngOnInit() {
   }
   
-  onServerCreated(server) {
-    server.id = this.servers.length + 1
-    this.servers.push(server)
+  onServerCreated(server:IServerData) {
+    const newServer:IServer = {...server,
+      id: this.servers.length + 1
+    }
+    
+    this.servers.push(newServer)
   }
   
 }

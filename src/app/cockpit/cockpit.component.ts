@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { IServerData } from '../../models/serversModel';
 
 @Component({
   selector: 'app-cockpit',
@@ -8,8 +9,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class CockpitComponent implements OnInit {
   serverName = "";
   serverContent = "";
-  @Output() onCreateServer = new EventEmitter();
-  @Output() onResetServers = new EventEmitter()
+  @Output() onCreateServer = new EventEmitter<IServerData>();
+  @Output() onResetServers = new EventEmitter();
 
   constructor() { }
 

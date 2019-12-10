@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-interface IServer {id: number; name: string; content: string}
+import { IServer } from '../../models/serversModel';
 
 @Component({
     selector: "app-server",
