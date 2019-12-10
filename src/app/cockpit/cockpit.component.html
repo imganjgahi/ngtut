@@ -1,7 +1,6 @@
 
-<input type="text" [(ngModel)]="serverName">
-<input type="text" [(ngModel)]="serverContent">
+<input type="text" #serverNameInput>
+<input type="text" #serverContentInput>
 <button 
-[disabled]="serverName === '' || serverContent === '' " 
-(click)="onCreatedServer()"> Add a new Server </button>
+(click)="onCreatedServer(serverNameInput, serverContentInput)"> Add a new Server </button>
 <button (click)="onResetServers.emit()">Reset</button>

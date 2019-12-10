@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { IServerData } from '../../models/serversModel';
 
 @Component({
@@ -7,8 +7,8 @@ import { IServerData } from '../../models/serversModel';
   styleUrls: ['./cockpit.component.scss']
 })
 export class CockpitComponent implements OnInit {
-  serverName = "";
-  serverContent = "";
+  @ViewChild('serverNameInput', {static: true}) serverName: ElementRef;
+  @ViewChild('serverContentInput', {static: true}) serverContent: ElementRef;
   @Output() onCreateServer = new EventEmitter<IServerData>();
   @Output() onResetServers = new EventEmitter();
 
@@ -19,11 +19,9 @@ export class CockpitComponent implements OnInit {
 
   onCreatedServer () {
     const data = {
-      name: this.serverName,
-      content: this.serverContent
+      name: this.serverName.nativeElement.value,
+      content: this.serverContent.nativeElement.value
     }
     this.onCreateServer.emit(data);
-    this.serverName = "";
-    this.serverContent = "";
   }
 }
