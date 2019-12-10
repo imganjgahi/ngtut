@@ -1,6 +1,3 @@
-<p 
-[ngStyle]="{ backgroundColor: getColor() }"
-[ngClass]="{online: serverStatus, server: true}"
->
-    the server with ID: {{serverId}} is {{ getServerStatus() ? "online" : "offline" }} 
+<p >
+{{currentServer.id}} :) {{currentServer.name}} / <span> {{currentServer.content}} </span>
 </p>

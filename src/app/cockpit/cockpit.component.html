@@ -1,0 +1,7 @@
+
+<input type="text" [(ngModel)]="serverName">
+<input type="text" [(ngModel)]="serverContent">
+<button 
+[disabled]="serverName === '' || serverContent === '' " 
+(click)="onCreatedServer()"> Add a new Server </button>
+<button (click)="onResetServers.emit()">Reset</button>

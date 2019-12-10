@@ -1,33 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 
+
+interface IServer {id: number; name: string; content: string}
 @Component({
   selector: 'app-servers',
   templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.scss']
 })
 export class ServersComponent implements OnInit {
-  allowNewServer: boolean = false;
-  serverCreationStatus:boolean = false;
-  creationBtnText = "add new server";
-  serverName = "";
-  servers: string[] = ["myapp"]
+  
+
+  servers: IServer[] = [{id: 1, name: 'server', content: "some content"}]
   constructor() { 
-    setTimeout(() => {
-      this.allowNewServer = true
-    }, 1000);
   }
 
   ngOnInit() {
   }
-
-  onChangeServerInput () {
-    this.serverCreationStatus = false;
+  
+  onServerCreated(server) {
+    server.id = this.servers.length + 1
+    this.servers.push(server)
   }
-  onChangeBtnText (txt: string) {
-    this.creationBtnText= txt;
-  }
-  onCreateServer () {
-    this.serverCreationStatus = true
-    this.servers.push(this.serverName)
-  }
+  
 }

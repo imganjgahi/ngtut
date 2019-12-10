@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+interface IServer {id: number; name: string; content: string}
 
 @Component({
     selector: "app-server",
@@ -7,15 +9,8 @@ import { Component } from '@angular/core';
 })
 export class ServerComponent {
 
-     serverId: number = Math.floor(Math.random() * 100);
-     serverStatus: boolean = false;
+    @Input() currentServer:IServer 
 
-     getServerStatus() {
-         console.log("SEVRED: ", this.serverStatus)
-         return this.serverStatus = this.serverId % 2 === 0
-     }
-
-     getColor() {
-         return this.serverStatus ? 'lightseagreen' : 'red'
-     }
+     
+    
 }
